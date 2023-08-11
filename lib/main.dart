@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_social_media/pages/0.main_page.dart';
+import 'package:flutter_project_social_media/pages/1.loading_page.dart';
 
 void main() {
   runApp(const Application());
@@ -89,7 +89,7 @@ class _ApplicationState extends State<Application> {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: const MainPage(),
+      home: const LoadingPage(),
     );
   }
 }

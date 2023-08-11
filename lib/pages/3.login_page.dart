@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_social_media/pages/4.0.main_page.dart';
+//NOTICE:
+//this is just UI, so don't expect auth systems to work her
+//i just added a simple way of login to show the loginPage.
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -10,6 +14,8 @@ class LoginPage extends StatefulWidget {
 class _LoginPageState extends State<LoginPage> {
   FocusNode focusGuardEmail = FocusNode();
   FocusNode focusGuardPassword = FocusNode();
+  var emailTextEditingController = TextEditingController(text: '');
+  var passwordTextEditingController = TextEditingController(text: '');
 
   @override
   void initState() {
@@ -119,6 +125,7 @@ class _LoginPageState extends State<LoginPage> {
                 ),
                 TextField(
                   focusNode: focusGuardEmail,
+                  controller: emailTextEditingController,
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                     labelText: ' Email ',
@@ -149,7 +156,9 @@ class _LoginPageState extends State<LoginPage> {
                   height: 32,
                 ),
                 TextField(
+                  obscureText: true,
                   focusNode: focusGuardPassword,
+                  controller: passwordTextEditingController,
                   decoration: InputDecoration(
                     contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
                     labelText: ' Password ',
@@ -183,7 +192,16 @@ class _LoginPageState extends State<LoginPage> {
                   height: 46,
                   width: 129,
                   child: ElevatedButton(
-                    onPressed: () {},
+                    onPressed: () {
+                      if (emailTextEditingController.text == 'test123@gmail.com' &&
+                          passwordTextEditingController.text == 'thisIsJustUI') {
+                        Navigator.of(context).push(
+                          MaterialPageRoute(
+                            builder: (context) => const MainPage(),
+                          ),
+                        );
+                      }
+                    },
                     style: Theme.of(context).elevatedButtonTheme.style,
                     child: const Text(
                       'sign in',

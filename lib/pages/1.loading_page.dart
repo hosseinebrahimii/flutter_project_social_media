@@ -1,7 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_project_social_media/pages/2.switch_account_page.dart';
 
-class LoadingPage extends StatelessWidget {
+class LoadingPage extends StatefulWidget {
   const LoadingPage({super.key});
+
+  @override
+  State<LoadingPage> createState() => _LoadingPageState();
+}
+
+class _LoadingPageState extends State<LoadingPage> {
+  @override
+  void initState() {
+    super.initState();
+    loadingNextPage();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -52,6 +64,19 @@ class LoadingPage extends StatelessWidget {
           ),
         ),
       ),
+    );
+  }
+
+  void loadingNextPage() {
+    Future.delayed(
+      const Duration(seconds: 1),
+      () {
+        Navigator.of(context).push(
+          MaterialPageRoute(
+            builder: (context) => const SwitchAccountPage(),
+          ),
+        );
+      },
     );
   }
 }

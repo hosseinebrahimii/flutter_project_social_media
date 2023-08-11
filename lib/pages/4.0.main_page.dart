@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_social_media/pages/4.home_page.dart';
-import 'package:flutter_project_social_media/pages/5.search_page.dart';
-import 'package:flutter_project_social_media/pages/6.post_page.dart';
-import 'package:flutter_project_social_media/pages/7.activity_page.dart';
-import 'package:flutter_project_social_media/pages/8.user_profile_page.dart';
+import 'package:flutter_project_social_media/pages/4.1.home_page.dart';
+import 'package:flutter_project_social_media/pages/4.2.search_page.dart';
+import 'package:flutter_project_social_media/pages/4.3.post_page.dart';
+import 'package:flutter_project_social_media/pages/4.4.activity_page.dart';
+import 'package:flutter_project_social_media/pages/4.5.user_profile_page.dart';
 
 class MainPage extends StatefulWidget {
   const MainPage({super.key});

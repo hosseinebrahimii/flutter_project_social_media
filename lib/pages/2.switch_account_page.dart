@@ -1,5 +1,7 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter_project_social_media/pages/3.login_page.dart';
+import 'package:flutter_project_social_media/pages/4.0.main_page.dart';
 
 class SwitchAccountPage extends StatelessWidget {
   const SwitchAccountPage({super.key});
@@ -70,7 +72,13 @@ class SwitchAccountPage extends StatelessWidget {
                                 height: 46,
                                 width: 129,
                                 child: ElevatedButton(
-                                  onPressed: () {},
+                                  onPressed: () {
+                                    Navigator.of(context).push(
+                                      MaterialPageRoute(
+                                        builder: (context) => const MainPage(),
+                                      ),
+                                    );
+                                  },
                                   style: Theme.of(context).elevatedButtonTheme.style,
                                   child: const Text(
                                     'Confirm',
@@ -80,9 +88,18 @@ class SwitchAccountPage extends StatelessWidget {
                               const SizedBox(
                                 height: 31,
                               ),
-                              Text(
-                                'switch account',
-                                style: Theme.of(context).textTheme.displayLarge,
+                              GestureDetector(
+                                onTap: () {
+                                  Navigator.of(context).push(
+                                    MaterialPageRoute(
+                                      builder: (context) => const LoginPage(),
+                                    ),
+                                  );
+                                },
+                                child: Text(
+                                  'switch account',
+                                  style: Theme.of(context).textTheme.displayLarge,
+                                ),
                               ),
                               const SizedBox(
                                 height: 31,
