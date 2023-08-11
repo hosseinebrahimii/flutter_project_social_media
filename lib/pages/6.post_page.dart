@@ -48,7 +48,7 @@ Widget _getTopPageContent(context) {
         children: [
           Text(
             'Post',
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.displayLarge,
           ),
           const SizedBox(
             width: 15,
@@ -57,7 +57,7 @@ Widget _getTopPageContent(context) {
           const Spacer(),
           Text(
             'Next',
-            style: Theme.of(context).textTheme.headline4,
+            style: Theme.of(context).textTheme.displayLarge,
           ),
           const SizedBox(
             width: 15,

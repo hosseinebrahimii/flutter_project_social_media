@@ -107,7 +107,7 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     Text(
                       'Sign in to ',
-                      style: Theme.of(context).textTheme.headline3,
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
                     const Image(
                       image: AssetImage('images/minilogo.png'),
@@ -198,14 +198,14 @@ class _LoginPageState extends State<LoginPage> {
                   children: [
                     Text(
                       'Don\'t have an account? /',
-                      style: Theme.of(context).textTheme.headline5,
+                      style: Theme.of(context).textTheme.displayMedium,
                     ),
                     const SizedBox(
                       width: 5,
                     ),
                     Text(
                       'Sign up',
-                      style: Theme.of(context).textTheme.headline4,
+                      style: Theme.of(context).textTheme.displayLarge,
                     ),
                   ],
                 ),

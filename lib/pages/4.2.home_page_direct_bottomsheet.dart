@@ -116,7 +116,7 @@ Widget _getBottomSheetProfile(
 }) {
   return Column(
     children: [
-      Container(
+      SizedBox(
         width: 60,
         height: 60,
         child: ClipRRect(
@@ -131,7 +131,7 @@ Widget _getBottomSheetProfile(
       ),
       Text(
         profileName,
-        style: Theme.of(context).textTheme.headline6,
+        style: Theme.of(context).textTheme.titleMedium,
         textAlign: TextAlign.center,
       ),
     ],

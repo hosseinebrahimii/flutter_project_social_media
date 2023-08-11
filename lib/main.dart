@@ -18,47 +18,40 @@ class _ApplicationState extends State<Application> {
     return MaterialApp(
       theme: ThemeData(
         textTheme: TextTheme(
-          //5
-          headline1: const TextStyle(
-            fontFamily: 'SM',
-            color: Color(0xffFFFFFF),
-            fontSize: 12,
-            fontWeight: FontWeight.w400,
-          ),
-          //3
-          headline2: const TextStyle(
-            fontFamily: 'GB',
-            color: Color(0xffFFFFFF),
-            fontSize: 14,
-            fontWeight: FontWeight.w700,
-          ),
-          //1
-          // headline3: const TextStyle(
-          //   fontFamily: 'GB',
-          //   color: Color(0xffFFFFFF),
-          //   fontSize: 20,
-          //   fontWeight: FontWeight.w700,
-          // ),
-          //2
-          headline4: const TextStyle(
+          displayLarge: const TextStyle(
             fontFamily: 'GB',
             color: Color(0xffFFFFFF),
             fontSize: 16,
             fontWeight: FontWeight.w700,
           ),
           //2
-          headline5: TextStyle(
+          displayMedium: TextStyle(
             fontFamily: 'GB',
             color: const Color(0xffFFFFFF).withOpacity(0.3),
             fontSize: 16,
             fontWeight: FontWeight.w700,
           ),
+          //3
+          titleLarge: const TextStyle(
+            fontFamily: 'GB',
+            color: Color(0xffFFFFFF),
+            fontSize: 14,
+            fontWeight: FontWeight.w700,
+          ),
+
           //4
-          headline6: const TextStyle(
+          titleMedium: const TextStyle(
             fontFamily: 'GB',
             color: Color(0xffFFFFFF),
             fontSize: 12,
             fontWeight: FontWeight.w700,
+          ),
+          //5
+          headlineMedium: const TextStyle(
+            fontFamily: 'SM',
+            color: Color(0xffFFFFFF),
+            fontSize: 12,
+            fontWeight: FontWeight.w400,
           ),
         ),
         elevatedButtonTheme: ElevatedButtonThemeData(

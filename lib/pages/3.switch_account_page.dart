@@ -61,7 +61,7 @@ class SwitchAccountPage extends StatelessWidget {
                               ),
                               Text(
                                 'Amirahmadadibii',
-                                style: Theme.of(context).textTheme.headline4,
+                                style: Theme.of(context).textTheme.displayLarge,
                               ),
                               const SizedBox(
                                 height: 20,
@@ -71,10 +71,10 @@ class SwitchAccountPage extends StatelessWidget {
                                 width: 129,
                                 child: ElevatedButton(
                                   onPressed: () {},
+                                  style: Theme.of(context).elevatedButtonTheme.style,
                                   child: const Text(
                                     'Confirm',
                                   ),
-                                  style: Theme.of(context).elevatedButtonTheme.style,
                                 ),
                               ),
                               const SizedBox(
@@ -82,7 +82,7 @@ class SwitchAccountPage extends StatelessWidget {
                               ),
                               Text(
                                 'switch account',
-                                style: Theme.of(context).textTheme.headline4,
+                                style: Theme.of(context).textTheme.displayLarge,
                               ),
                               const SizedBox(
                                 height: 31,
@@ -103,14 +103,14 @@ class SwitchAccountPage extends StatelessWidget {
                 children: [
                   Text(
                     'Don\'t have an account? /',
-                    style: Theme.of(context).textTheme.headline5,
+                    style: Theme.of(context).textTheme.displayMedium,
                   ),
                   const SizedBox(
                     width: 5,
                   ),
                   Text(
                     'Sign up',
-                    style: Theme.of(context).textTheme.headline4,
+                    style: Theme.of(context).textTheme.displayLarge,
                   ),
                 ],
               ),

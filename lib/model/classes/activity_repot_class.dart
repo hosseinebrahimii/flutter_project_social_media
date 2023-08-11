@@ -10,22 +10,13 @@ class ActivityReport {
   String? comment = '';
   String? postaddress = 'plus';
   ActivityReport({
-    isNew = false,
-    required imageName,
-    required accountName,
-    required trailingType,
-    required timeOfEvent,
-    otherLikesOrFollowers = 0,
-    comment = '',
-    postaddress = 'plus',
-  }) {
-    this.isNew = isNew;
-    this.imageName = imageName;
-    this.accountName = accountName;
-    this.trailingType = trailingType;
-    this.timeOfEvent = timeOfEvent;
-    this.otherLikesOrFollowers = otherLikesOrFollowers;
-    this.comment = comment;
-    this.postaddress = postaddress;
-  }
+    this.isNew = false,
+    required this.imageName,
+    required this.accountName,
+    required this.trailingType,
+    required this.timeOfEvent,
+    this.otherLikesOrFollowers = 0,
+    this.comment = '',
+    this.postaddress = 'plus',
+  });
 }

@@ -50,7 +50,7 @@ Widget _getTabBar(context) {
     alignment: Alignment.bottomCenter,
     child: TabBar(
       controller: _tabController,
-      labelStyle: Theme.of(context).textTheme.headline4,
+      labelStyle: Theme.of(context).textTheme.displayLarge,
       indicatorPadding: const EdgeInsets.symmetric(horizontal: 17),
       indicatorColor: const Color(0xffF35383),
       indicatorWeight: 2,
@@ -91,7 +91,7 @@ Widget _getTabBarViewContent(context) {
               children: [
                 Text(
                   'New',
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
                 const SizedBox(
                   height: 20,
@@ -119,7 +119,7 @@ Widget _getTabBarViewContent(context) {
                 ),
                 Text(
                   'Today',
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
                 const SizedBox(
                   height: 20,
@@ -147,7 +147,7 @@ Widget _getTabBarViewContent(context) {
                 ),
                 Text(
                   'This Week',
-                  style: Theme.of(context).textTheme.headline4,
+                  style: Theme.of(context).textTheme.displayLarge,
                 ),
                 const SizedBox(
                   height: 20,

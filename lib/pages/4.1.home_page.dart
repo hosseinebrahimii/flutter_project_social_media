@@ -188,11 +188,11 @@ class HomePage extends StatelessWidget {
           children: [
             Text(
               'amirahmadadibii',
-              style: Theme.of(context).textTheme.headline6,
+              style: Theme.of(context).textTheme.titleMedium,
             ),
             Text(
               'امیر احمد ادیبی برنامه نویس موبایل',
-              style: Theme.of(context).textTheme.headline1,
+              style: Theme.of(context).textTheme.headlineMedium,
             ),
           ],
         ),
@@ -253,7 +253,7 @@ class HomePage extends StatelessWidget {
                               ),
                               Text(
                                 '2.6 K',
-                                style: Theme.of(context).textTheme.headline2,
+                                style: Theme.of(context).textTheme.titleLarge,
                               ),
                             ],
                           ),
@@ -268,7 +268,7 @@ class HomePage extends StatelessWidget {
                               ),
                               Text(
                                 '1.5 K',
-                                style: Theme.of(context).textTheme.headline2,
+                                style: Theme.of(context).textTheme.titleLarge,
                               ),
                             ],
                           ),
