@@ -21,6 +21,7 @@ class _MainPageState extends State<MainPage> {
     //
     return Scaffold(
       extendBody: true,
+      backgroundColor: const Color(0xff1C1F2E),
       bottomNavigationBar: SizedBox(
         height: 68,
         child: ClipRRect(
