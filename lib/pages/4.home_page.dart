@@ -1,6 +1,6 @@
 import 'dart:ui';
 import 'package:flutter/material.dart';
-import 'package:flutter_project_social_media/pages/4.2.home_page_direct_bottomsheet.dart';
+import 'package:flutter_project_social_media/widgets/home_page_direct_bottomsheet.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -15,29 +15,6 @@ class HomePage extends StatelessWidget {
           slivers: [
             SliverToBoxAdapter(
               child: _getStoryList(),
-            ),
-            SliverToBoxAdapter(
-              child: ElevatedButton(
-                onPressed: (() {
-                  showModalBottomSheet(
-                    context: context,
-                    isScrollControlled: true,
-                    backgroundColor: Colors.transparent,
-                    barrierColor: Colors.transparent,
-                    builder: ((context) {
-                      return Padding(
-                        padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
-                        child: DraggableScrollableSheet(
-                          maxChildSize: 0.75,
-                          initialChildSize: 0.5,
-                          builder: (context, scrollController) => getBottomSheetContent(scrollController),
-                        ),
-                      );
-                    }),
-                  );
-                }),
-                child: const Text('Show BottomSheet'),
-              ),
             ),
             SliverList(
               delegate: SliverChildBuilderDelegate(((context, index) {
@@ -275,7 +252,27 @@ class HomePage extends StatelessWidget {
                           const SizedBox(
                             width: 40,
                           ),
-                          Image.asset('images/direct.png'),
+                          GestureDetector(
+                            onTap: () {
+                              showModalBottomSheet(
+                                context: context,
+                                isScrollControlled: true,
+                                backgroundColor: Colors.transparent,
+                                barrierColor: Colors.transparent,
+                                builder: ((context) {
+                                  return Padding(
+                                    padding: EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
+                                    child: DraggableScrollableSheet(
+                                      maxChildSize: 0.75,
+                                      initialChildSize: 0.5,
+                                      builder: (context, scrollController) => getBottomSheetContent(scrollController),
+                                    ),
+                                  );
+                                }),
+                              );
+                            },
+                            child: Image.asset('images/direct.png'),
+                          ),
                           const SizedBox(
                             width: 54,
                           ),

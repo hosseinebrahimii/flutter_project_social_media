@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_project_social_media/pages/4.1.home_page.dart';
+import 'package:flutter_project_social_media/pages/4.home_page.dart';
 import 'package:flutter_project_social_media/pages/5.search_page.dart';
 import 'package:flutter_project_social_media/pages/6.post_page.dart';
 import 'package:flutter_project_social_media/pages/7.activity_page.dart';
