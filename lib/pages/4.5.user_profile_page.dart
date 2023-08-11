@@ -32,6 +32,7 @@ class _UserProfilePageState extends State<UserProfilePage> {
 List<Widget> _getHeader(context) {
   return [
     SliverAppBar(
+      automaticallyImplyLeading: false,
       expandedHeight: 173,
       backgroundColor: Colors.transparent,
       actions: const [

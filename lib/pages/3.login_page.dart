@@ -3,6 +3,8 @@ import 'package:flutter_project_social_media/pages/4.0.main_page.dart';
 //NOTICE:
 //this is just UI, so don't expect auth systems to work her
 //i just added a simple way of login to show the loginPage.
+//user: test123@gmail.com
+//pass: thisIsJustUI
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -16,6 +18,7 @@ class _LoginPageState extends State<LoginPage> {
   FocusNode focusGuardPassword = FocusNode();
   var emailTextEditingController = TextEditingController(text: '');
   var passwordTextEditingController = TextEditingController(text: '');
+  String errorMessage = '';
 
   @override
   void initState() {
@@ -42,6 +45,7 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
       child: Scaffold(
+        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
         body: Stack(
           alignment: Alignment.topCenter,
@@ -195,11 +199,24 @@ class _LoginPageState extends State<LoginPage> {
                     onPressed: () {
                       if (emailTextEditingController.text == 'test123@gmail.com' &&
                           passwordTextEditingController.text == 'thisIsJustUI') {
+                        setState(() {
+                          emailTextEditingController.text = '';
+                          passwordTextEditingController.text = '';
+                          errorMessage = 'Login successful';
+                        });
                         Navigator.of(context).push(
                           MaterialPageRoute(
                             builder: (context) => const MainPage(),
                           ),
                         );
+                      } else if (emailTextEditingController.text == '' && passwordTextEditingController.text == '') {
+                        setState(() {
+                          errorMessage = 'Please type your Email and Password';
+                        });
+                      } else {
+                        setState(() {
+                          errorMessage = 'Please check your Email/Password and try again';
+                        });
                       }
                     },
                     style: Theme.of(context).elevatedButtonTheme.style,
@@ -209,7 +226,14 @@ class _LoginPageState extends State<LoginPage> {
                   ),
                 ),
                 const SizedBox(
-                  height: 50,
+                  height: 20,
+                ),
+                Text(
+                  errorMessage,
+                  style: Theme.of(context).textTheme.displayLarge,
+                ),
+                const SizedBox(
+                  height: 20,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,

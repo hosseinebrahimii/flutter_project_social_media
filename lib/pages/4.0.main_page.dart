@@ -19,26 +19,31 @@ class _MainPageState extends State<MainPage> {
   Widget build(BuildContext context) {
     //
     //
-    return Scaffold(
-      extendBody: true,
-      backgroundColor: const Color(0xff1C1F2E),
-      bottomNavigationBar: SizedBox(
-        height: 68,
-        child: ClipRRect(
-          borderRadius: const BorderRadius.only(
-            topLeft: Radius.circular(15),
-            topRight: Radius.circular(15),
+    return WillPopScope(
+      onWillPop: () async {
+        return false;
+      },
+      child: Scaffold(
+        extendBody: true,
+        backgroundColor: const Color(0xff1C1F2E),
+        bottomNavigationBar: SizedBox(
+          height: 68,
+          child: ClipRRect(
+            borderRadius: const BorderRadius.only(
+              topLeft: Radius.circular(15),
+              topRight: Radius.circular(15),
+            ),
+            child: _getBottomNavigationBar(),
           ),
-          child: _getBottomNavigationBar(),
         ),
-      ),
-      //
-      //
-      body: SafeArea(
-        maintainBottomViewPadding: true,
-        child: IndexedStack(
-          index: _getBottomNavigatorBarIndex,
-          children: _getBody(),
+        //
+        //
+        body: SafeArea(
+          maintainBottomViewPadding: true,
+          child: IndexedStack(
+            index: _getBottomNavigatorBarIndex,
+            children: _getBody(),
+          ),
         ),
       ),
     );

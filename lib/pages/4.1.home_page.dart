@@ -29,6 +29,7 @@ class HomePage extends StatelessWidget {
 
   AppBar _getAppBar() {
     return AppBar(
+      automaticallyImplyLeading: false,
       toolbarHeight: 75,
       titleSpacing: 17,
       title: Container(
