@@ -3,8 +3,8 @@ import 'package:flutter_project_social_media/pages/4.0.main_page.dart';
 //NOTICE:
 //this is just UI, so don't expect auth systems to work her
 //i just added a simple way of login to show the loginPage.
-//user: test123@gmail.com
-//pass: thisIsJustUI
+//user: test@gmail.com
+//pass: 1234
 
 class LoginPage extends StatefulWidget {
   const LoginPage({super.key});
@@ -45,20 +45,21 @@ class _LoginPageState extends State<LoginPage> {
         ),
       ),
       child: Scaffold(
-        resizeToAvoidBottomInset: false,
         backgroundColor: Colors.transparent,
-        body: Stack(
-          alignment: Alignment.topCenter,
-          children: [
-            Positioned(
-              left: 0,
-              right: 0,
-              top: 50,
-              bottom: 0,
-              child: _getImage(),
-            ),
-            _getPageData(),
-          ],
+        body: SingleChildScrollView(
+          child: Stack(
+            alignment: Alignment.topCenter,
+            children: [
+              Positioned(
+                left: 0,
+                right: 0,
+                top: 50,
+                bottom: 0,
+                child: _getImage(),
+              ),
+              _getPageData(),
+            ],
+          ),
         ),
       ),
     );
@@ -74,18 +75,17 @@ class _LoginPageState extends State<LoginPage> {
   Widget _getImage() {
     return Column(
       children: [
-        Expanded(
-          child: Container(
-            decoration: const BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage('images/rocket.png'),
-                fit: BoxFit.fitWidth,
-              ),
+        Container(
+          height: MediaQuery.of(context).size.height / 2,
+          decoration: const BoxDecoration(
+            image: DecorationImage(
+              image: AssetImage('images/rocket.png'),
+              fit: BoxFit.fitWidth,
             ),
           ),
         ),
-        Expanded(
-          child: Container(),
+        Container(
+          height: MediaQuery.of(context).size.height / 2,
         ),
       ],
     );
@@ -94,165 +94,165 @@ class _LoginPageState extends State<LoginPage> {
   Widget _getPageData() {
     return Column(
       children: [
-        Expanded(
-          child: Container(),
+        Container(
+          height: MediaQuery.of(context).size.height / 2,
         ),
-        Expanded(
-          child: Container(
-            decoration: const BoxDecoration(
-              color: Color(0xff1C1F2E),
-              borderRadius: BorderRadius.only(
-                topLeft: Radius.circular(15),
-                topRight: Radius.circular(15),
+        Container(
+          height: MediaQuery.of(context).size.height / 2,
+          decoration: const BoxDecoration(
+            color: Color(0xff1C1F2E),
+            borderRadius: BorderRadius.only(
+              topLeft: Radius.circular(15),
+              topRight: Radius.circular(15),
+            ),
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              const SizedBox(
+                height: 50,
               ),
-            ),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              children: [
-                const SizedBox(
-                  height: 50,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Sign in to ',
-                      style: Theme.of(context).textTheme.displayLarge,
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Sign in to ',
+                    style: Theme.of(context).textTheme.displayLarge,
+                  ),
+                  const Image(
+                    image: AssetImage('images/minilogo.png'),
+                  ),
+                ],
+              ),
+              const SizedBox(
+                height: 36,
+              ),
+              TextField(
+                focusNode: focusGuardEmail,
+                controller: emailTextEditingController,
+                keyboardType: TextInputType.emailAddress,
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  labelText: ' Email ',
+                  labelStyle: TextStyle(
+                    fontFamily: 'GM',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: focusGuardEmail.hasFocus ? const Color(0xffF35383) : const Color(0xffC5C5C5),
+                  ),
+                  constraints: const BoxConstraints(maxHeight: 46, maxWidth: 340),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: const BorderSide(
+                      width: 3,
+                      color: Color(0xffC5C5C5),
                     ),
-                    const Image(
-                      image: AssetImage('images/minilogo.png'),
-                    ),
-                  ],
-                ),
-                const SizedBox(
-                  height: 36,
-                ),
-                TextField(
-                  focusNode: focusGuardEmail,
-                  controller: emailTextEditingController,
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                    labelText: ' Email ',
-                    labelStyle: TextStyle(
-                      fontFamily: 'GM',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: focusGuardEmail.hasFocus ? const Color(0xffF35383) : const Color(0xffC5C5C5),
-                    ),
-                    constraints: const BoxConstraints(maxHeight: 46, maxWidth: 340),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(
-                        width: 3,
-                        color: Color(0xffC5C5C5),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(
-                        width: 3,
-                        color: Color(0xffF35383),
-                      ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: const BorderSide(
+                      width: 3,
+                      color: Color(0xffF35383),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 32,
-                ),
-                TextField(
-                  obscureText: true,
-                  focusNode: focusGuardPassword,
-                  controller: passwordTextEditingController,
-                  decoration: InputDecoration(
-                    contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
-                    labelText: ' Password ',
-                    labelStyle: TextStyle(
-                      fontFamily: 'GM',
-                      fontSize: 16,
-                      fontWeight: FontWeight.w500,
-                      color: focusGuardPassword.hasFocus ? const Color(0xffF35383) : const Color(0xffC5C5C5),
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+              TextField(
+                obscureText: true,
+                focusNode: focusGuardPassword,
+                controller: passwordTextEditingController,
+                decoration: InputDecoration(
+                  contentPadding: const EdgeInsets.symmetric(horizontal: 15, vertical: 15),
+                  labelText: ' Password ',
+                  labelStyle: TextStyle(
+                    fontFamily: 'GM',
+                    fontSize: 16,
+                    fontWeight: FontWeight.w500,
+                    color: focusGuardPassword.hasFocus ? const Color(0xffF35383) : const Color(0xffC5C5C5),
+                  ),
+                  constraints: const BoxConstraints(maxHeight: 46, maxWidth: 340),
+                  enabledBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: const BorderSide(
+                      width: 3,
+                      color: Color(0xffC5C5C5),
                     ),
-                    constraints: const BoxConstraints(maxHeight: 46, maxWidth: 340),
-                    enabledBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(
-                        width: 3,
-                        color: Color(0xffC5C5C5),
-                      ),
-                    ),
-                    focusedBorder: OutlineInputBorder(
-                      borderRadius: BorderRadius.circular(15),
-                      borderSide: const BorderSide(
-                        width: 3,
-                        color: Color(0xffF35383),
-                      ),
+                  ),
+                  focusedBorder: OutlineInputBorder(
+                    borderRadius: BorderRadius.circular(15),
+                    borderSide: const BorderSide(
+                      width: 3,
+                      color: Color(0xffF35383),
                     ),
                   ),
                 ),
-                const SizedBox(
-                  height: 32,
-                ),
-                SizedBox(
-                  height: 46,
-                  width: 129,
-                  child: ElevatedButton(
-                    onPressed: () {
-                      if (emailTextEditingController.text == 'test123@gmail.com' &&
-                          passwordTextEditingController.text == 'thisIsJustUI') {
-                        setState(() {
-                          emailTextEditingController.text = '';
-                          passwordTextEditingController.text = '';
-                          errorMessage = 'Login successful';
-                        });
-                        Navigator.of(context).push(
-                          MaterialPageRoute(
-                            builder: (context) => const MainPage(),
-                          ),
-                        );
-                      } else if (emailTextEditingController.text == '' && passwordTextEditingController.text == '') {
-                        setState(() {
-                          errorMessage = 'Please type your Email and Password';
-                        });
-                      } else {
-                        setState(() {
-                          errorMessage = 'Please check your Email/Password and try again';
-                        });
-                      }
-                    },
-                    style: Theme.of(context).elevatedButtonTheme.style,
-                    child: const Text(
-                      'sign in',
-                    ),
+              ),
+              const SizedBox(
+                height: 32,
+              ),
+              SizedBox(
+                height: 46,
+                width: 129,
+                child: ElevatedButton(
+                  onPressed: () {
+                    if (emailTextEditingController.text == 'test@gmail.com' &&
+                        passwordTextEditingController.text == '1234') {
+                      setState(() {
+                        emailTextEditingController.text = '';
+                        passwordTextEditingController.text = '';
+                        errorMessage = 'Login successful';
+                      });
+                      Navigator.of(context).push(
+                        MaterialPageRoute(
+                          builder: (context) => const MainPage(),
+                        ),
+                      );
+                    } else if (emailTextEditingController.text == '' && passwordTextEditingController.text == '') {
+                      setState(() {
+                        errorMessage = 'Please type your Email and Password';
+                      });
+                    } else {
+                      setState(() {
+                        errorMessage = 'Please check your Email/Password and try again';
+                      });
+                    }
+                  },
+                  style: Theme.of(context).elevatedButtonTheme.style,
+                  child: const Text(
+                    'sign in',
                   ),
                 ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Text(
-                  errorMessage,
-                  style: Theme.of(context).textTheme.displayLarge,
-                ),
-                const SizedBox(
-                  height: 20,
-                ),
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Text(
-                      'Don\'t have an account? /',
-                      style: Theme.of(context).textTheme.displayMedium,
-                    ),
-                    const SizedBox(
-                      width: 5,
-                    ),
-                    Text(
-                      'Sign up',
-                      style: Theme.of(context).textTheme.displayLarge,
-                    ),
-                  ],
-                ),
-              ],
-            ),
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Text(
+                errorMessage,
+                style: Theme.of(context).textTheme.displayLarge,
+              ),
+              const SizedBox(
+                height: 20,
+              ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    'Don\'t have an account? /',
+                    style: Theme.of(context).textTheme.displayMedium,
+                  ),
+                  const SizedBox(
+                    width: 5,
+                  ),
+                  Text(
+                    'Sign up',
+                    style: Theme.of(context).textTheme.displayLarge,
+                  ),
+                ],
+              ),
+            ],
           ),
         ),
       ],
