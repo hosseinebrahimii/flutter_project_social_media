@@ -12,6 +12,7 @@ class SearchPage extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 17),
           child: CustomScrollView(
+            physics: const BouncingScrollPhysics(),
             slivers: _getSlivers(),
           ),
         ),
@@ -29,15 +30,17 @@ class SearchPage extends StatelessWidget {
               height: 20,
             ),
             Container(
+              height: 46,
+              width: 394,
+              alignment: Alignment.center,
               decoration: BoxDecoration(
                 color: const Color(0xff272B40),
                 borderRadius: BorderRadius.circular(13),
               ),
-              height: 46,
-              width: 394,
               child: Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 10),
                 child: Row(
+                  crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
                     Image.asset('images/searchIcon.png'),
                     const SizedBox(
@@ -49,11 +52,12 @@ class SearchPage extends StatelessWidget {
                           border: InputBorder.none,
                           hintText: 'Search ...',
                           hintStyle: TextStyle(
-                              height: 1.3,
-                              fontFamily: 'GB',
-                              fontSize: 12,
-                              fontWeight: FontWeight.bold,
-                              color: Colors.white),
+                            height: 1,
+                            fontFamily: 'GB',
+                            fontSize: 12,
+                            fontWeight: FontWeight.bold,
+                            color: Colors.white,
+                          ),
                         ),
                       ),
                     ),
