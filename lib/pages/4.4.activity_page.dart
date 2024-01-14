@@ -164,6 +164,11 @@ Widget _getTabBarViewContent(context) {
             childCount: 4,
           ),
         ),
+        const SliverToBoxAdapter(
+          child: SizedBox(
+            height: 60,
+          ),
+        ),
       ],
     ),
   );
