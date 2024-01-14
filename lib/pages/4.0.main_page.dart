@@ -53,9 +53,17 @@ class _MainPageState extends State<MainPage> {
     return BottomNavigationBar(
       currentIndex: _getBottomNavigatorBarIndex,
       onTap: (value) {
-        setState(() {
-          _getBottomNavigatorBarIndex = value;
-        });
+        if (value == 2) {
+          Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (context) => const PostPage(),
+            ),
+          );
+        } else {
+          setState(() {
+            _getBottomNavigatorBarIndex = value;
+          });
+        }
       },
       showSelectedLabels: false,
       showUnselectedLabels: false,
@@ -129,7 +137,7 @@ class _MainPageState extends State<MainPage> {
     return const <Widget>[
       HomePage(),
       SearchPage(),
-      PostPage(),
+      SizedBox(), // PostPage won't be shown here, we use navigation to push PostPage
       ActivityPage(),
       UserProfilePage(),
     ];
