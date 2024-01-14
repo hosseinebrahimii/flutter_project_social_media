@@ -137,6 +137,11 @@ class SearchPage extends StatelessWidget {
           ],
         ),
       ),
+      const SliverToBoxAdapter(
+        child: SizedBox(
+          height: 75,
+        ),
+      ),
     ];
   }
 }
