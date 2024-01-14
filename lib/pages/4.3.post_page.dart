@@ -25,7 +25,7 @@ class PostPage extends StatelessWidget {
               child: _getGridViewContent(),
             ),
             Positioned(
-              bottom: 60,
+              bottom: 0,
               left: 0,
               right: 0,
               child: _getBottomPageContent(),
